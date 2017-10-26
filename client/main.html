@@ -1,0 +1,80 @@
+<body>
+	<div class="container">
+		<header>
+			<h1>Gif Maker Test</h1>
+		</header>
+		<div>
+			<div>
+				<div id="dropDiv" ondrop="" ondragover=""><span>Drag and <em>Drop</em> here</span></div>
+				<br>
+			</div>
+			<div>
+				1.&nbsp;{{> gifmaker }}
+			</div>
+			<div>
+				2.&nbsp;{{> gifmaker }}
+			</div>
+			<div>
+				3.&nbsp;{{> gifmaker }}
+			</div>
+			<div>
+				4.&nbsp;{{> gifmaker }}
+			</div>
+			<div>
+				5.&nbsp;{{> gifmaker }}
+			</div>
+			<br>
+			<div>
+				<input type="number" placeholder="milliseconds" />
+			</div>
+			<br>
+			<div>
+				<form class="gifform">
+					<button>Submit</button>
+				</form>
+			</div>
+		</div>
+		
+		{{> imageView}}
+	</div>
+</body>
+
+<template name="gifmaker">
+	<input type=file />
+</template>
+
+<template name="imageView">
+	<div class="imageView">
+		{{#each images}}
+		<div>
+			<a href="{{this.url}}" target="_blank"><img src="{{this.url store='thumbs' uploading='/images/uploading.gif' storing='/images/storing.gif'}}" alt="" class="thumbnail" /></a>
+		</div>
+		{{/each}}
+	</div>
+</template>
+
+<!-- <head>
+  <title>gif-project</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  {{> hello}}
+  {{> info}}
+</body>
+
+<template name="hello">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+</template>
+
+<template name="info">
+  <h2>Learn Meteor!</h2>
+  <ul>
+    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
+    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
+    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
+    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
+  </ul>
+</template> -->
